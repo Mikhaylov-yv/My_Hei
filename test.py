@@ -26,6 +26,12 @@ def test_d_prep_all():
           'Должно быть: ', dt.col_gr * len(dt.month_list)
           )
     print(X_train.shape, y_test.shape, X_test.shape, y_test.shape)
+    print(np.unique(y_test, return_counts=True))
+
+def test_d_prep_all_pred_last():
+    dt = dp.Data_preparation(df_clean,month_list, 'last', 'pred')
+    X = dt.preparation()
+    print(X.shape)
 
 def test_d_prep_2():
     df_test = df_in[df_in.CustomerID.isin([16919.0, 16843.0])]
